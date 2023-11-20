@@ -1,0 +1,775 @@
+{
+	"info": {
+		"_postman_id": "4d970342-cad2-4b54-979f-27f2f810d7e4",
+		"name": "Catsualidad-App",
+		"description": "Hola profe,\n\nEn la colección puede ver los más de 30 endpoints que expone el backend de la aplicación desarrollada.\n\nSe debe tener en cuenta que los endpoints tienen como fuente de verdad la capa de persistencia, por lo cuál es necesario tener presente esta a la hora de consultar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25009728"
+	},
+	"item": [
+		{
+			"name": "Crear User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identificationNumber\":\"1192100232\",\r\n    \"email\": \"breiner.batalla@correounivalle.edu.co\",\r\n    \"firstName\":\"Breiner\",          \r\n    \"lastName\": \"Batalla\",\r\n    \"address\":{  \r\n        \"city\": \"Tuluá\",\r\n        \"neighborhood\": \"Principe\",\r\n        \"street\":\"Calle 19 # 1 - 90\",\r\n        \"department\": \"Valle del Cauca\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"breiner.batalla@correounivalle.edu.co\",\r\n    \"password\": \"judXKjr5FF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/auth/sign-in"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Create Adoption Pet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sex",
+							"value": "MALE",
+							"type": "text"
+						},
+						{
+							"key": "photoFile",
+							"type": "file",
+							"src": "/C:/Users/PC/Pictures/2.PNG"
+						},
+						{
+							"key": "adopted",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "2023-08-05",
+							"type": "text"
+						},
+						{
+							"key": "eyeColor",
+							"value": "Black",
+							"type": "text"
+						},
+						{
+							"key": "adoptionCondition",
+							"value": "Hogar cariñoso y personas buenas",
+							"type": "text"
+						},
+						{
+							"key": "race",
+							"value": "Criollo",
+							"type": "text"
+						},
+						{
+							"key": "typePet",
+							"value": "DOG",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "this is a beatiful dog",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Breinerprueba2",
+							"type": "text"
+						},
+						{
+							"key": "qualityList",
+							"value": "Cariñoso1, Bello2, Atento2",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "vaccinated",
+							"value": "true\n",
+							"type": "text"
+						},
+						{
+							"key": "dewormed",
+							"value": "true\n",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "coatType",
+							"value": "liso",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8081/api/v1/adoption-pets/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Send Adoption request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"adoptionForm\": {\r\n         \"activitiesPlanToDoWithThePet\": \"correr y jugar\",\r\n            \"includesPetInCaseOfMove\": false,\r\n            \"reasonOfAdoption\": \"Animal lover\",\r\n            \"weeklyHoursAvailableForThePet\": 12\r\n\r\n     }  ,\r\n    \"familyReferenceForm\": {\r\n                \"cellphoneNumber\": \"312323123\",\r\n                 \"firstName\": \"brei\",\r\n                 \"lastName\": \"bata\",\r\n                 \"email\": \"prueba@gmail.com\",\r\n                 \"cellphone\":\"1233123123\",\r\n                 \"identificationNumber\": \"1212321\",\r\n                 \"address\": {\r\n                \"city\": \"Bogotá\",\r\n                \"neighborhood\": \"Limonar\",\r\n                \"street\":\"Calle 25 # 1- 41\",\r\n                \"department\": \"Cundinamarca\"                     \r\n                 },\r\n                \"typeKinship\": \"Hermano\"       \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/adoption-requests/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN -Create admin user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDQ4NjEyLCJleHAiOjE3MDA0NTAwNTJ9.89uuZtOyBaZ6CRbqcJqU8nylN7Uwg_6JX8VH16RSSEA"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"identificationNumber\":\"1193200951\",\r\n    \"email\": \"breiner.batalla1@correounivalle.edu.co\",\r\n    \"firstName\":\"Francisco\",          \r\n    \"lastName\": \"Caicedo\",\r\n    \"address\":{  \r\n        \"city\": \"Tuluá\",\r\n        \"neighborhood\": \"Limonar\",\r\n        \"street\":\"Calle 19 # 1- 41\",\r\n        \"department\": \"Valle del Cauca\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/admin/register"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Update adoption request status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"ACCEPTED\",\r\n    \"message\": \"Su solicitud de adopción ha sido aceptada, favor acercarse a nuestras instalaciones\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/admin/requests/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Upload data adoption pets through csv file",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": "http://localhost:8081/api/v1/admin/boostrap-csv"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - generate report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/admin/report?format=pdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"report"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "pdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Adoption Pet Available to adoption",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/adoption-pets"
+			},
+			"response": []
+		},
+		{
+			"name": "Get details adoption pet by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/adoption-pets/details/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter adoption pet by race",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/adoption-pets/filter/by-race?race=Criollo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"adoption-pets",
+						"filter",
+						"by-race"
+					],
+					"query": [
+						{
+							"key": "race",
+							"value": "Criollo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter adoption pet by sex",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/adoption-pets/filter/by-sex?sex=MALE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"adoption-pets",
+						"filter",
+						"by-sex"
+					],
+					"query": [
+						{
+							"key": "sex",
+							"value": "MALE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter adoption pet by type pet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/adoption-pets/filter/by-pet-type?pet=DOG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"adoption-pets",
+						"filter",
+						"by-pet-type"
+					],
+					"query": [
+						{
+							"key": "pet",
+							"value": "DOG"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter adoption pet by condition",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/adoption-pets/filter/all/by-condition"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all adoption request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/adoption-requests/user"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Get All adoptions request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/adoption-requests"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Get adoption request detail by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/admin/requests/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Get all lostpet reports",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/admin/lostpets/reports"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Update status lost pet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDQ4NjEyLCJleHAiOjE3MDA0NTAwNTJ9.89uuZtOyBaZ6CRbqcJqU8nylN7Uwg_6JX8VH16RSSEA"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/admin/lostpets/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Update fundation information",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/admin/fundation?key=name&content=Breiner fundation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"fundation"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "name"
+						},
+						{
+							"key": "content",
+							"value": "Breiner fundation"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get fundation information",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/fundations"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Create lost pet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "description",
+							"value": "Mascota alegre",
+							"type": "text"
+						},
+						{
+							"key": "photoFile",
+							"type": "file",
+							"src": "/C:/Users/PC/Pictures/conta.PNG"
+						},
+						{
+							"key": "name",
+							"value": "Toni",
+							"type": "text"
+						},
+						{
+							"key": "race",
+							"value": "Criollo",
+							"type": "text"
+						},
+						{
+							"key": "ownerEmail",
+							"value": "brefran99@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "found",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "street",
+							"value": "Calle 1",
+							"type": "text"
+						},
+						{
+							"key": "department",
+							"value": "departamento",
+							"type": "text"
+						},
+						{
+							"key": "neighborhood",
+							"value": "neigbasd",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "cityy",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8081/api/v1/lostpets"
+			},
+			"response": []
+		},
+		{
+			"name": "Get lost pet by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/lostpets/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all lost pets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/lostpets"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - delete lost pet by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/lostpets/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Send report lost pet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"addressLastPlaceSeen\": {\r\n    \"street\": \"Calle Principal\",\r\n    \"city\": \"Ciudad Ejemplo\",\r\n    \"department\": \"Departamento Ejemplo\",\r\n    \"neighborhood\": \"Barrio Ejemplo\"\r\n  },\r\n  \"additionalInformation\": \"La encontre en xxx lugar a las asxxxxx asdsad\",\r\n  \"atYourDisposition\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/lostpets/2/report"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - get all admin users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/users/admin"
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"lastName\": \"Apellido\",\r\n  \"firstName\": \"Nombre\",\r\n  \"address\": {\r\n      \"idAddress\": 1,\r\n    \"street\": \"Calle Principal\",\r\n    \"city\": \"Ciudad Ejemplo\",\r\n    \"department\": \"Departamento Ejemplo\",\r\n    \"neighborhood\": \"Barrio Ejemplo\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - delete lost pet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/lostpets/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - delete user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - delete adoption pet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8081/api/v1/adoption-pets/1"
+			},
+			"response": []
+		}
+	]
+}
