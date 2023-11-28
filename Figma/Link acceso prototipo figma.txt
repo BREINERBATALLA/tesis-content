@@ -1,1 +1,9 @@
-https://www.figma.com/file/CxN8YrXk24J5g0nu7CifCb/Untitled?type=design&node-id=0%3A1&mode=design&t=eG8U5c5f0yGsMn0k-1
+https://www.figma.com/file/CxN8YrXk24J5g0nu7CifCb/Untitled?type=design&node-id=0%3A1&mode=design&t=9ivPx7TZRnTltTg4-1
+
+Prototipo de media fidelidad con interactividad
+
+Pasos a seguir
+
+Abrir el enlacne
+Dar click en el icono de play
+Navegar por las pantallas por medio de los botones y el nav bar
