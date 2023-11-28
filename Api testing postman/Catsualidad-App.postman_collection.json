@@ -14,7 +14,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"identificationNumber\":\"1192100232\",\r\n    \"email\": \"breiner.batalla@correounivalle.edu.co\",\r\n    \"firstName\":\"Breiner\",          \r\n    \"lastName\": \"Batalla\",\r\n    \"address\":{  \r\n        \"city\": \"Tuluá\",\r\n        \"neighborhood\": \"Principe\",\r\n        \"street\":\"Calle 19 # 1 - 90\",\r\n        \"department\": \"Valle del Cauca\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"identificationNumber\":\"1192100232\",\r\n    \"email\": \"manur82944@gmail.com\",\r\n    \"firstName\":\"Breiner\",          \r\n    \"lastName\": \"Batalla\",\r\n    \"address\":{  \r\n        \"city\": \"Tuluá\",\r\n        \"neighborhood\": \"Principe\",\r\n        \"street\":\"Calle 19 # 1 - 90\",\r\n        \"department\": \"Valle del Cauca\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -44,12 +44,12 @@
 			"response": []
 		},
 		{
-			"name": "ADMIN - Create Adoption Pet",
+			"name": "ADMIN - Create Adoption Pet -Informa error en size",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51cjgyOTQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMTE0Mzc3NywiZXhwIjoxNzAxMTQ1MjE3fQ.WyfWKLSZYl1k-W0w6onc99mNhO-ev6NNnJzOt8O2drI"
 					}
 				},
 				"method": "POST",
@@ -65,7 +65,7 @@
 						{
 							"key": "photoFile",
 							"type": "file",
-							"src": "/C:/Users/PC/Pictures/2.PNG"
+							"src": "/C:/Users/PC/Downloads/WhatsApp Image 2023-11-24 at 10.41.37 AM (1).jpeg"
 						},
 						{
 							"key": "adopted",
@@ -125,7 +125,199 @@
 						},
 						{
 							"key": "size",
-							"value": "3",
+							"value": "PEQUEÑO",
+							"type": "text"
+						},
+						{
+							"key": "coatType",
+							"value": "liso",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8081/api/v1/adoption-pets/create"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Create Adoption Pet -Informa error en size Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51cjgyOTQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMTE0Mzc3NywiZXhwIjoxNzAxMTQ1MjE3fQ.WyfWKLSZYl1k-W0w6onc99mNhO-ev6NNnJzOt8O2drI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sex",
+							"value": "MALE",
+							"type": "text"
+						},
+						{
+							"key": "photoFile",
+							"type": "file",
+							"src": "/C:/Users/PC/Downloads/WhatsApp Image 2023-11-24 at 10.41.37 AM (1).jpeg"
+						},
+						{
+							"key": "adopted",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "2023-08-05",
+							"type": "text"
+						},
+						{
+							"key": "eyeColor",
+							"value": "Black",
+							"type": "text"
+						},
+						{
+							"key": "adoptionCondition",
+							"value": "Hogar cariñoso y personas buenas",
+							"type": "text"
+						},
+						{
+							"key": "race",
+							"value": "Criollo",
+							"type": "text"
+						},
+						{
+							"key": "typePet",
+							"value": "DOG",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "this is a beatiful dog",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Breinerprueba2",
+							"type": "text"
+						},
+						{
+							"key": "qualityList",
+							"value": "Cariñoso1, Bello2, Atento2",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "vaccinated",
+							"value": "true\n",
+							"type": "text"
+						},
+						{
+							"key": "dewormed",
+							"value": "true\n",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "PEQUEÑO",
+							"type": "text"
+						},
+						{
+							"key": "coatType",
+							"value": "liso",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8081/api/v1/adoption-pets/create"
+			},
+			"response": []
+		},
+		{
+			"name": "ADMIN - Create Adoption Pet Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51cjgyOTQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMTE0Mzc3NywiZXhwIjoxNzAxMTQ1MjE3fQ.WyfWKLSZYl1k-W0w6onc99mNhO-ev6NNnJzOt8O2drI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sex",
+							"value": "MALE",
+							"type": "text"
+						},
+						{
+							"key": "photoFile",
+							"type": "file",
+							"src": "/C:/Users/PC/Downloads/WhatsApp Image 2023-11-24 at 10.41.37 AM.jpeg"
+						},
+						{
+							"key": "adopted",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "birthDate",
+							"value": "2023-08-05",
+							"type": "text"
+						},
+						{
+							"key": "eyeColor",
+							"value": "Black",
+							"type": "text"
+						},
+						{
+							"key": "adoptionCondition",
+							"value": "Hogar cariñoso y personas buenas",
+							"type": "text"
+						},
+						{
+							"key": "race",
+							"value": "Criollo",
+							"type": "text"
+						},
+						{
+							"key": "typePet",
+							"value": "DOG",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "this is a beatiful dog",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Breinerprueba2",
+							"type": "text"
+						},
+						{
+							"key": "qualityList",
+							"value": "Cariñoso1, Bello2, Atento2",
+							"contentType": "application/json",
+							"type": "text"
+						},
+						{
+							"key": "vaccinated",
+							"value": "true\n",
+							"type": "text"
+						},
+						{
+							"key": "dewormed",
+							"value": "true\n",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "Little",
 							"type": "text"
 						},
 						{
@@ -145,7 +337,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51cjgyOTQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMDkzODU1NSwiZXhwIjoxNzAwOTM5OTk1fQ.46c5Iy-nRSRiEYF2pbzHoIe3BzsRFan2Uao0fDjs20E"
 					}
 				},
 				"method": "POST",
@@ -193,7 +385,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwOTM4NTI5LCJleHAiOjE3MDA5Mzk5Njl9.CLWKS6ndXTObvBi_f_Qg4cAieyVk6zA-2nd_NLgWxXw"
 					}
 				},
 				"method": "PUT",
@@ -217,7 +409,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwOTQwMDM5LCJleHAiOjE3MDA5NDE0Nzl9.zoNKjOvFZWsKMbUwDEx4NML5LkwYZLY4N5uaTbTYpRI"
 					}
 				},
 				"method": "POST",
@@ -228,7 +420,7 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": []
+							"src": "/C:/Users/PC/Downloads/Mascotas bbdd final - Hoja 1.csv"
 						}
 					]
 				},
@@ -242,7 +434,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwOTM4NTI5LCJleHAiOjE3MDA5Mzk5Njl9.CLWKS6ndXTObvBi_f_Qg4cAieyVk6zA-2nd_NLgWxXw"
 					}
 				},
 				"method": "GET",
@@ -276,7 +468,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51cjgyOTQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMDkzODU1NSwiZXhwIjoxNzAwOTM5OTk1fQ.46c5Iy-nRSRiEYF2pbzHoIe3BzsRFan2Uao0fDjs20E"
 					}
 				},
 				"method": "GET",
@@ -291,7 +483,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxMDQ3LCJleHAiOjE3MDA0NTI0ODd9.asfrLnXKXldn-GUiRSZZ9J_pB_4yfV1HQDdZhgjGGv0"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51cjgyOTQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMDkzODU1NSwiZXhwIjoxNzAwOTM5OTk1fQ.46c5Iy-nRSRiEYF2pbzHoIe3BzsRFan2Uao0fDjs20E"
 					}
 				},
 				"method": "GET",
@@ -486,12 +678,12 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDQ4NjEyLCJleHAiOjE3MDA0NTAwNTJ9.89uuZtOyBaZ6CRbqcJqU8nylN7Uwg_6JX8VH16RSSEA"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwOTQ3ODY3LCJleHAiOjE3MDA5NDkzMDd9.Ps4smTehxDwRLgigYzszPGTNNH2RqptzyzzYfpk_cpU"
 					}
 				},
 				"method": "PUT",
 				"header": [],
-				"url": "http://localhost:8081/api/v1/admin/lostpets/1"
+				"url": "http://localhost:8081/api/v1/admin/lostpets/2"
 			},
 			"response": []
 		},
@@ -501,13 +693,13 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUxOTM1LCJleHAiOjE3MDA0NTMzNzV9.KkqG_kRysDKiyktWNCJDMHEMjqUkg_STxxfARq6ChDo"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwOTQwMDM5LCJleHAiOjE3MDA5NDE0Nzl9.zoNKjOvFZWsKMbUwDEx4NML5LkwYZLY4N5uaTbTYpRI"
 					}
 				},
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/v1/admin/fundation?key=name&content=Breiner fundation",
+					"raw": "http://localhost:8081/api/v1/admin/fundation?key=name&content=ROGER FUNDATION",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -526,7 +718,7 @@
 						},
 						{
 							"key": "content",
-							"value": "Breiner fundation"
+							"value": "ROGER FUNDATION"
 						}
 					]
 				}
@@ -539,7 +731,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwOTQwMDM5LCJleHAiOjE3MDA5NDE0Nzl9.zoNKjOvFZWsKMbUwDEx4NML5LkwYZLY4N5uaTbTYpRI"
 					}
 				},
 				"method": "GET",
@@ -554,7 +746,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwOTQ3ODY3LCJleHAiOjE3MDA5NDkzMDd9.Ps4smTehxDwRLgigYzszPGTNNH2RqptzyzzYfpk_cpU"
 					}
 				},
 				"method": "POST",
@@ -570,7 +762,7 @@
 						{
 							"key": "photoFile",
 							"type": "file",
-							"src": "/C:/Users/PC/Pictures/conta.PNG"
+							"src": "/C:/Users/PC/Downloads/2023-09-1412d31cbe-84a3-4efb-917a-945edc895ca5perritu1.jpg"
 						},
 						{
 							"key": "name",
@@ -639,7 +831,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51cjgyOTQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMDk0Nzg0OCwiZXhwIjoxNzAwOTQ5Mjg4fQ.vJMYyJKCxTZSdlBBil8MO24LgQdy21HdFNK0rkJpggw"
 					}
 				},
 				"method": "GET",
@@ -669,7 +861,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJicmVpbmVyLmJhdGFsbGFAY29ycmVvdW5pdmFsbGUuZWR1LmNvIiwiaWF0IjoxNzAwNDUzODkwLCJleHAiOjE3MDA0NTUzMzB9.2O3AOvayiD9AkkMSX8GWGEStL-wZych4N4UyFuEWC1I"
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51cjgyOTQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMDk0Nzg0OCwiZXhwIjoxNzAwOTQ5Mjg4fQ.vJMYyJKCxTZSdlBBil8MO24LgQdy21HdFNK0rkJpggw"
 					}
 				},
 				"method": "POST",
@@ -768,6 +960,42 @@
 				"method": "DELETE",
 				"header": [],
 				"url": "http://localhost:8081/api/v1/adoption-pets/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all adoption pet by size",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYW51cjgyOTQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMTE0Mzc3NywiZXhwIjoxNzAxMTQ1MjE3fQ.WyfWKLSZYl1k-W0w6onc99mNhO-ev6NNnJzOt8O2drI"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/adoption-pets/filter/all/size?size=Little",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"adoption-pets",
+						"filter",
+						"all",
+						"size"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "Little"
+						}
+					]
+				}
 			},
 			"response": []
 		}

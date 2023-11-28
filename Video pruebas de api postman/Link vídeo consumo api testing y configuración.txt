@@ -2,3 +2,5 @@ Link vídeo enlace
 https://drive.google.com/file/d/13GDiED2cOQQ38or2JgOV444uff9a0CE9/view?usp=sharing
 
 Link acceso público infraestructura aws: 
+
+Se dejará listo cuándo se solicite, ya que la infraestructura en aws genera costos, en el momento solicitado, se habilitá el servidor(El mismo día)
